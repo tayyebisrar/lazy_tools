@@ -1,12 +1,11 @@
 from datetime import datetime
-
+import random
 now = datetime.now()
 
 inps = input("Enter inputs and output in single string: ")
 inputs = []
 i_s = ""
-output = inps[-1]
-for inp in inps[:-1]:
+for inp in inps:
     inputs.append(inp)
 
 for x in range(len(inputs)):
@@ -42,10 +41,12 @@ while True:
 yn = input("Save table? (y/n)").lower()
 
 if yn == "y":
-    crrtime = now.strftime("%Y%M%D%H%M%S")
+    crrtime = now.strftime("%Y%H%M%S") + str(random.randint(0, 1000000))
     with open(crrtime+".cmp", "w") as cmpfile:
-        cmpfile.writelines(inputs)
+        cmpfile.writelines(i_s)
+        cmpfile.write("\n")
         for line in table:
             cmpfile.writelines(line)
+            cmpfile.write("\n")
 else:
     print("Table not saved")
