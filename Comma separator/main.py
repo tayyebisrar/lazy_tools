@@ -7,6 +7,6 @@ for subject in subjects:
     else:
         print(subject.strip() + " - Grade 9")
 
-
+ 
 
 
