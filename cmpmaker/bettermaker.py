@@ -22,7 +22,7 @@ n = len(inps)
 
 for i in range(0, 2**(len(inps)-1)):
         b = bin(i)[2:].zfill(len(inps)-1)
-        o = input(f"{b} - {i}: ")
+        o = input(f"{b}: ")
         s = ''
         for j in range(len(str(b))):
             if j == 0:
